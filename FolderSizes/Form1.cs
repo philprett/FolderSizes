@@ -230,6 +230,12 @@ namespace FolderSizes
         private void Form1_Load(object sender, EventArgs e)
         {
             FolderToScan.Text = Environment.CurrentDirectory;
+
+            var args = Environment.GetCommandLineArgs();
+            if (args.Length > 1)
+            {
+                FolderToScan.Text = args[1];
+            }
         }
 
         private void BrowseButton_Click(object sender, EventArgs e)
